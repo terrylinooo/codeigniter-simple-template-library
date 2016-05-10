@@ -10,7 +10,7 @@ Download library.php to your library folder.
 ```php
 $this->load->library(array('layout'));
 ```
-Put **CI_head()** insite **&lt;head&gt; and &lt;/head&gt;** tag 
+Put **CI_head()** inside **&lt;head&gt;** and **&lt;/head&gt;** tag 
 ```html
 <!DOCTYPE html>
 <html lang="en">
