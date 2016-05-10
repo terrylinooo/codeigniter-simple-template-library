@@ -52,8 +52,7 @@ Output
 ```
 
 ####add_css_rawtext
-add_css_rawtext($content)
-
+add_css_rawtext ( string $content )
 ```php
 /*
  * @param string $content
@@ -90,7 +89,7 @@ add_js_file($tag_js, $path = '', $position = 'header')
 add_js_files($tag_js = array(), $path = '', $position = 'header')
 
 ####add_js_rawtext
-add_js_rawtext($content, $position = 'header')
+add_js_rawtext ( string $content , string $position )
 
 ```php
 /*
