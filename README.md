@@ -101,9 +101,9 @@ $css_text = <<<EOF
 	background-color: #eeeeee;
 }
 EOF;
-		$this->layout->add_css_rawtext($css_text);
-		
-	}
+
+$this->layout->add_css_rawtext($css_text);
+
 ```
 Output
 ```html
@@ -153,9 +153,9 @@ add_js_rawtext ( string $content , string $position )
 $js_text = <<<EOF
 alert('this is just a test');
 EOF;
-	$this->layout->add_js_rawtext($js_text, 'header');
-		
-}
+
+$this->layout->add_js_rawtext($js_text, 'header');
+
 ```
 
 Output
