@@ -108,6 +108,26 @@ class layout {
     }
 
     /**
+     * Add a custom meta tag
+     *
+     * @param string $type
+     * @param array $attribute
+     */
+
+    public function add_custom_meta($type, $attribute = array())
+    {
+        $attr_array = array();
+
+        foreach ($attribute AS $key => $value)
+        {
+            $attr_array[] = $key . '="' . $value . '"';
+        }
+        $attr_string = implode(' ', $attr_array);
+
+        self::instance()->tag_meta .= self::instance()->pre_space . '<' . $type . ' ' . $attr_string . ' />' . "\n";
+    }
+    
+    /**
      * Add single css file
      *
      * @param string $tag_css
