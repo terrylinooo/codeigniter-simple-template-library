@@ -49,7 +49,7 @@ Output
 ```
 
 ####add_custom_meta
-add_meta(string $type, array $attributes)
+add_custom_meta(string $type, array $attributes)
 
 ```php
 	$this->layout->add_custom_meta('link', array(
