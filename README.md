@@ -10,7 +10,7 @@ Download library.php to your library folder.
 ```php
 $this->load->library(array('layout'));
 ```
-Put **CI_head()** insite **&gt;head&lt; and &gt;/head&lt** tag 
+Put **CI_head()** insite **&lt;head&gt; and &lt;/head&gt;** tag 
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ Put **CI_head()** insite **&gt;head&lt; and &gt;/head&lt** tag
 </head>
 ```
 
-Put **CI_footer()** before **</body>** tag 
+Put **CI_footer()** before **&lt;/body&gt;** tag 
 ```html
 <!DOCTYPE html>
 <html lang="en">
