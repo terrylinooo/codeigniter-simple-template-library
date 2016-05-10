@@ -83,10 +83,27 @@ Output
 ```
 
 ####add_js_file
-add_js_file($tag_js, $path = '', $position = 'header')
+add_js_file ( string $tag_js , string $path, string $position )
+
+```php
+$this->layout->add_css_file('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+```
+Output
+```html
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+```
 
 ####add_js_files
-add_js_files($tag_js = array(), $path = '', $position = 'header')
+add_js_files ( array $tag_js , string $path, string $position )
+
+```php
+$this->layout->add_css_files(array('bootstrap.min.js','script'), base_url().'assets/js/');
+```
+Output
+```html
+	<script src="http://dictpedia.org/assets/js/bootstrap.min.js"></script>
+	<script src="http://dictpedia.org/assets/js/script.js"></script>
+```
 
 ####add_js_rawtext
 add_js_rawtext ( string $content , string $position )
