@@ -166,3 +166,33 @@ alert('this is just a test');
 
 </script>
 ```
+
+### Built-in Meta Tags
+
+#### $meta_default
+author, viewport, keywords, description, canonical
+
+```php
+// examples
+$this->layout->meta_default['author'] = 'Terry Lin';
+$this->layout->meta_default['description'] = 'This is just a test file';
+```
+
+#### $meta_twitter
+url, site, creator, card, title, description, image_src
+
+```php
+// examples
+$this->layout->meta_default['card'] = 'summary_large_image';
+$this->layout->meta_default['image_src'] = 'http://test.test/test.gif';
+```
+
+#### $meta_facebook
+site_name, url, title, type, description, image, admins, app_id
+
+```php
+// examples
+$this->layout->meta_facebook['site_name'] = 'Demo Site';
+$this->layout->meta_facebook['description'] = 'This is just a test file';
+$this->layout->meta_facebook['app_id'] = '1123123152';
+```
