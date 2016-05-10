@@ -10,6 +10,29 @@ Download library.php to your library folder.
 ```php
 $this->load->library(array('layout'));
 ```
+Put **CI_head()** insite **<head> and </head>** tag 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><?= $title ?></title>
+	<?= CI_head() ?>
+</head>
+```
+
+Put **CI_footer()** before **</body>** tag 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><?= $title ?></title>
+	<?= CI_head() ?>
+</head>
+```
 
 ### API Examples
 
@@ -46,6 +69,18 @@ EOF;
 		$this->layout->add_css_rawtext($css_text);
 		
 	}
+```
+Output
+```html
+<style>
+
+
+.text {
+	font-size: 12px;
+	background-color: #eeeeee;
+}
+
+</style>
 ```
 
 ####add_js_file
