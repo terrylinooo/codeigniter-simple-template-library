@@ -28,6 +28,7 @@ Put **CI_footer()** before **&lt;/body&gt;** tag in view.
 </body>
 </html>
 ```
+All HTML output are handled by CI_head() and CI_footer() 
 
 ### API Examples
 Use the following APIs in controller.
@@ -37,10 +38,18 @@ Use the following APIs in controller.
 add_meta($name, $value, $type = 'meta')
 
 ####add_css_file
-add_css_file($tag_css, $path = '')
+add_css_file ( string $tag_css, string $path )
+
+```php
+$this->layout->add_css_file('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+```
+Output
+```html
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+```
 
 ####add_css_files
-add_css_files($tag_css = array(), $path = '')
+add_css_files ( array $tag_css, string $path )
 
 ```php
 $this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url().'assets/css/');
