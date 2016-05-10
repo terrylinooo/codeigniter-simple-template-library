@@ -183,8 +183,8 @@ url, site, creator, card, title, description, image_src
 
 ```php
 // examples
-$this->layout->meta_default['card'] = 'summary_large_image';
-$this->layout->meta_default['image_src'] = 'http://test.test/test.gif';
+$this->layout->meta_twitter['card'] = 'summary_large_image';
+$this->layout->meta_twitter['image_src'] = 'http://test.test/test.gif';
 ```
 
 #### $meta_facebook
