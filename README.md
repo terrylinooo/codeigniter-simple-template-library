@@ -35,7 +35,33 @@ Use the following APIs in controller.
 
 
 ####add_meta
-add_meta($name, $value, $type = 'meta')
+add_meta (string $name, string $value, string $type)
+
+```php
+/*
+ * @param string $type - 'meta' or 'link', default: meta
+ */
+	$this->layout->add_meta('author', 'Terry Lin');
+```
+Output
+```html
+	<meta name="author" content="Terry Lin" />
+```
+
+####add_custom_meta
+add_meta(string $type, array $attributes)
+
+```php
+	$this->layout->add_custom_meta('link', array(
+	    'rel' => 'parent',
+	    'rev' => 'subsection',
+	    'hreflang' => 'en'
+	);
+```
+Output
+```html
+	<link href="tag_link.asp" rel="parent" rev="subsection" hreflang="en">
+```
 
 ####add_css_file
 add_css_file ( string $tag_css, string $path )
