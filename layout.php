@@ -96,7 +96,8 @@ class layout {
 
     public function add_meta($name, $value, $type = 'meta')
     {
-        switch ($type) {
+        switch ($type) 
+        {
             case 'meta':
                 self::instance()->tag_meta .= self::instance()->pre_space . '<meta name="' . $name . '" content="' . $value . '" />' . "\n";
                 break;
