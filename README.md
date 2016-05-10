@@ -53,14 +53,15 @@ add_meta(string $type, array $attributes)
 
 ```php
 	$this->layout->add_custom_meta('link', array(
+	    'href' => 'test.php',
 	    'rel' => 'parent',
 	    'rev' => 'subsection',
 	    'hreflang' => 'en'
-	);
+	));
 ```
 Output
 ```html
-	<link href="tag_link.asp" rel="parent" rev="subsection" hreflang="en">
+	<link href="test.php" rel="parent" rev="subsection" hreflang="en">
 ```
 
 ####add_css_file
