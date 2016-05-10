@@ -55,6 +55,10 @@ Output
 add_css_rawtext($content)
 
 ```php
+/*
+ * @param string $content
+ */
+ 
 $css_text = <<<EOF
 
 .text {
@@ -89,10 +93,24 @@ add_js_files($tag_js = array(), $path = '', $position = 'header')
 add_js_rawtext($content, $position = 'header')
 
 ```php
+/*
+ * @param string $content
+ * @param string $position - 'header' or 'footer'
+ */
+ 
 $js_text = <<<EOF
 alert('this is just a test');
 EOF;
 	$this->layout->add_js_rawtext($js_text, 'header');
 		
 }
+```
+
+Output
+```html
+<script>
+
+alert('this is just a test');
+
+</script>
 ```
