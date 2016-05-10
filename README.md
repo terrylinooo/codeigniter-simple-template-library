@@ -24,14 +24,9 @@ Put **CI_head()** insite **&lt;head&gt; and &lt;/head&gt;** tag
 
 Put **CI_footer()** before **&lt;/body&gt;** tag 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?= $title ?></title>
-	<?= CI_head() ?>
-</head>
+<?= CI_footer() ?>
+</body>
+</html>
 ```
 
 ### API Examples
