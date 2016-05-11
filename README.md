@@ -204,28 +204,29 @@ Output
 ```
 
 ####get_title
+alias => CI_title()
 ```php
 $this->layout->get_title();
 ```
-alias => CI_title()
 
 ####get_body_attr
+alias => CI_body_attr()
 ```php
 $this->layout->get_body_attr();
 ```
-alias => CI_body_attr()
 
 ####get_header
+alias => CI_head()
 ```php
 $this->layout->get_header();
 ```
-alias => CI_head()
 
 ####get_footer
+alias => CI_footer()
 ```php
 $this->layout->get_footer();
 ```
-alias => CI_footer()
+
 
 ### Built-in Meta Tags
 
