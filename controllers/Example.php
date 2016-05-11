@@ -15,9 +15,6 @@ class Example extends CI_Controller
         $this->load->library(array('session', 'layout'));
         $this->load->helper(array('url'));
 
-        $this->load->model('user/user_model');
-
-        //$this->output->enable_profiler(TRUE);
         $this->layout->add_custom_meta('meta', array(
             'charset' => 'utf-8'
         ));
