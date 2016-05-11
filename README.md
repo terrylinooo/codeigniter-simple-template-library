@@ -17,7 +17,7 @@ Put **CI_head()** inside **&lt;head&gt;** and **&lt;/head&gt;** tag in view.
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?= $title ?></title>
+	<title><?= CI_title() ?></title>
 	<?= CI_head() ?>
 </head>
 ```
