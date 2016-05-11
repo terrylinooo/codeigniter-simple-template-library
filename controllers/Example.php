@@ -39,8 +39,16 @@ EOF;
         $js_text = <<<EOT
 alert('this is just a test');
 EOT;
+
+        $js_text = <<<EOT
+alert('this is just a test');
+EOT;
+        // Load view into a variable for importing javascript
+        $js_text_footer = $this->load->view('footer_javascript', '', true);
+
         $this->layout->add_css_rawtext($css_text);
         $this->layout->add_js_rawtext($js_text);
+        $this->layout->add_js_rawtext($js_text_footer, 'footer');
 
     }
 
