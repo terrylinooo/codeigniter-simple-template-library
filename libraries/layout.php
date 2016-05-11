@@ -37,6 +37,7 @@ class layout {
 
     public $pre_space = "    ";
     public $title = '';
+    public $body_attribute = '';
 
     public $meta_default = array(
         'author' => '',
@@ -245,11 +246,23 @@ class layout {
      * @return string
      */
 
-    public function title()
+    public function get_title()
     {
-        $_title = self::instance()->title;
+        return self::instance()->title;
+    }
 
-        return $_title;
+    /**
+     * Set title
+     *
+     * @param string $type
+     * @param array $attribute
+     */
+
+    public function set_title($string)
+    {
+        self::instance()->title = $string;
+
+        return self::instance()->title;
     }
 
     /**
@@ -258,7 +271,7 @@ class layout {
      * @return string
      */
 
-    public function header()
+    public function get_header()
     {
         self::instance()->meta_default();
         self::instance()->meta_twitter();
@@ -289,7 +302,7 @@ class layout {
      * @return string
      */
 
-    public function footer()
+    public function get_footer()
     {
         $_footer = self::instance()->tag_footer_js;
 
@@ -302,6 +315,43 @@ class layout {
 
         return $_footer;
     }
+
+
+    /**
+     * Get attributes from HTML body tag
+     *
+     * @return string
+     */
+
+    public function get_body_attr()
+    {
+        return self::instance()->body_attribute;
+    }
+
+
+    /**
+     * Set attributes to HTML body tag
+     *
+     * @param string $type
+     * @param array $attribute
+     */
+
+    public function set_body_attr($attribute = array())
+    {
+        $attr_array = array();
+
+        foreach ($attribute AS $key => $value)
+        {
+            $attr_array[] = $key . '="' . $value . '"';
+        }
+        $attr_string = implode(' ', $attr_array);
+
+        self::instance()->body_attribute .= $attr_string;
+    }
+
+    /****************************************************************
+     * Private functions                                            *
+     ****************************************************************/
 
     private function meta_default()
     {
@@ -359,15 +409,23 @@ class layout {
 }
 function CI_title()
 {
-    return layout::instance()->title();
+    return layout::instance()->get_title();
 }
 
 function CI_head()
 {
-    return layout::instance()->header();
+    return layout::instance()->get_header();
 }
 
 function CI_footer()
 {
-    return layout::instance()->footer();
+    return layout::instance()->get_footer();
+}
+
+function CI_body_attr()
+{
+    if (!empty(layout::instance()->get_body_attr()))
+    {
+        return ' ' . layout::instance()->get_body_attr();
+    }
 }
