@@ -184,6 +184,49 @@ alert('this is just a test');
 </script>
 ```
 
+####set_title
+set_title ( string $title )
+```php
+$this->layout->set_title('Test! This is a test title');
+```
+Output
+```html
+<title>Test! This is a test title</title>
+```
+####set_body_attr
+set_body_attr ( array $attribute )
+```php
+$this->layout->set_body_attr(array('id' => 'home', 'class' => 'global white-bg'));
+```
+Output
+```html
+<body id="home" class="global white-bg">
+```
+
+####get_title
+```php
+$this->layout->get_title();
+```
+alias => CI_title()
+
+####get_body_attr
+```php
+$this->layout->get_body_attr();
+```
+alias => CI_body_attr()
+
+####get_header
+```php
+$this->layout->get_header();
+```
+alias => CI_head()
+
+####get_footer
+```php
+$this->layout->get_footer();
+```
+alias => CI_footer()
+
 ### Built-in Meta Tags
 
 #### $meta_default
