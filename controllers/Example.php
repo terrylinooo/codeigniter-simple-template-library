@@ -55,6 +55,9 @@ EOT;
      */
     public function index()
     {
+        $this->layout->set_title('Test! This is test title');
+        $this->layout->set_body_attr(array('id' => 'home', 'class' => 'test more_class'));
+        
         // load views and send data
         $this->load->view('header', $data);
         $this->load->view('index', $data);
