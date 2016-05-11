@@ -258,9 +258,9 @@ class layout {
      * @param array $attribute
      */
 
-    public function set_title($string)
+    public function set_title($title)
     {
-        self::instance()->title = $string;
+        self::instance()->title = $title;
 
         return self::instance()->title;
     }
