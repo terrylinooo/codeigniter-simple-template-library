@@ -65,6 +65,21 @@ Output
 ```html
 	<link href="test.php" rel="parent" rev="subsection" hreflang="en">
 ```
+Build special meta tags:
+```php
+	$this->layout->add_custom_meta('meta', array(
+	    'charset' => 'utf-8'
+	));
+	$this->layout->add_custom_meta('meta', array(
+	    'http-equiv' => 'X-UA-Compatible',
+	    'content' => 'IE=edge'
+	));
+```
+Output
+```html
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+```
 
 ####add_css_file
 add_css_file ( string $tag_css, string $path )
