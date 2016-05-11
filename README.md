@@ -11,6 +11,7 @@ Download library.php to your library folder.
 $this->load->library(array('layout'));
 ```
 Put **CI_head()** inside **&lt;head&gt;** and **&lt;/head&gt;** tag in view.
+
 Put **CI_title()** inside **&lt;title&gt;** and **&lt;/title&gt;** tag in view.
 ```html
 <!DOCTYPE html>
