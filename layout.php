@@ -26,7 +26,6 @@
 
 class layout {
 
-    private $pre_space = "    ";
     private $tag_meta = '';
     private $tag_css = '';
     private $tag_header_js  = '';
@@ -35,6 +34,9 @@ class layout {
     private $rawtext_css = '';
     private $rawtext_header_js  = '';
     private $rawtext_footer_js  = '';
+
+    public $pre_space = "    ";
+    public $title = '';
 
     public $meta_default = array(
         'author' => '',
@@ -96,7 +98,7 @@ class layout {
 
     public function add_meta($name, $value, $type = 'meta')
     {
-        switch ($type) 
+        switch ($type)
         {
             case 'meta':
                 self::instance()->tag_meta .= self::instance()->pre_space . '<meta name="' . $name . '" content="' . $value . '" />' . "\n";
@@ -126,7 +128,7 @@ class layout {
 
         self::instance()->tag_meta .= self::instance()->pre_space . '<' . $type . ' ' . $attr_string . ' />' . "\n";
     }
-    
+
     /**
      * Add single css file
      *
@@ -237,6 +239,25 @@ class layout {
         }
     }
 
+    /**
+     * Output default title to prevent "Undefined variable" error
+     *
+     * @return string
+     */
+
+    public function title()
+    {
+        $_title = self::instance()->title;
+
+        return $_title;
+    }
+
+    /**
+     * Output data in head
+     *
+     * @return string
+     */
+
     public function header()
     {
         self::instance()->meta_default();
@@ -261,6 +282,12 @@ class layout {
 
         return $_header;
     }
+
+    /**
+     * Output data in footer
+     *
+     * @return string
+     */
 
     public function footer()
     {
@@ -329,6 +356,10 @@ class layout {
             }
         }
     }
+}
+function CI_title()
+{
+    return layout::instance()->title();
 }
 
 function CI_head()
