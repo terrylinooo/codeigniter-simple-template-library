@@ -18,7 +18,15 @@ class Example extends CI_Controller
         $this->load->model('user/user_model');
 
         //$this->output->enable_profiler(TRUE);
-
+        $this->layout->add_custom_meta('meta', array(
+            'charset' => 'utf-8'
+        ));
+        
+        $this->layout->add_custom_meta('meta', array(
+            'http-equiv' => 'X-UA-Compatible',
+            'content' => 'IE=edge'
+        ));
+        
         $this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url().'assets/css/');
 
         $css_text = <<<EOF
@@ -28,19 +36,12 @@ background-color: #eeeeee;
 }
 EOF;
 
-        $this->layout->add_css_rawtext($css_text);
-
         $js_text = <<<EOT
 alert('this is just a test');
 EOT;
+        $this->layout->add_css_rawtext($css_text);
+        $this->layout->add_js_rawtext($js_text);
 
-        $this->layout->add_custom_meta('meta', array(
-            'charset' => 'utf-8'
-        ));
-        $this->layout->add_custom_meta('meta', array(
-            'http-equiv' => 'X-UA-Compatible',
-            'content' => 'IE=edge'
-        ));
     }
 
     /**
