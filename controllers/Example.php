@@ -34,11 +34,12 @@ EOF;
 alert('this is just a test');
 EOT;
 
-        $this->layout->add_js_rawtext($js_text, 'header');
-        $this->layout->add_custom_meta('link', array(
-            'rel' => 'parent',
-            'rev' => 'subsection',
-            'hreflang' => 'en'
+        $this->layout->add_custom_meta('meta', array(
+            'charset' => 'utf-8'
+        ));
+        $this->layout->add_custom_meta('meta', array(
+            'http-equiv' => 'X-UA-Compatible',
+            'content' => 'IE=edge'
         ));
     }
 
