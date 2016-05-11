@@ -5,4 +5,4 @@
 	<title><?= CI_title() ?></title>
 	<?= CI_head() ?>
 </head>
-<body>
+<body<?= CI_body_attr() ?>>
