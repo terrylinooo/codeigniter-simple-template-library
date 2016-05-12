@@ -149,7 +149,7 @@ Output
 add_js_file ( string $tag_js , string $path, string $position )
 
 ```php
-$this->layout->add_css_file('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+$this->layout->add_js_file('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
 Output
 ```html
@@ -160,7 +160,7 @@ Output
 add_js_files ( array $tag_js , string $path, string $position )
 
 ```php
-$this->layout->add_css_files(array('bootstrap.min.js','script'), base_url().'assets/js/');
+$this->layout->add_js_files(array('bootstrap.min.js','script'), base_url().'assets/js/');
 ```
 Output
 ```html
