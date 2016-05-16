@@ -47,7 +47,7 @@ Use the following APIs in controller.
 
 
 ####add_meta
-add_meta (string $name, string $value, string $type)
+add_meta (string $name, string $value, string $type = 'meta')
 
 ```php
 /*
@@ -92,8 +92,8 @@ Output
 ```
 
 ####add_css_file
-add_css_file ( string $tag_css, string $path )
-
+add_css_file ( string $tag_css, string $path = '' )
+$path can be ignored if you set $tag_css as a remote file with full URL, or a local file with absolute path.
 ```php
 $this->layout->add_css_file('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 ```
@@ -103,7 +103,8 @@ Output
 ```
 
 ####add_css_files
-add_css_files ( array $tag_css, string $path )
+add_css_files ( array $tag_css, string $path = '')
+$path can be ignored if you set $tag_css as remote files with full URL, or local files with absolute path.
 
 ```php
 $this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url().'assets/css/');
@@ -146,8 +147,8 @@ Output
 ```
 
 ####add_js_file
-add_js_file ( string $tag_js , string $path, string $position )
-
+add_js_file ( string $tag_js , string $path = '', string $position = 'header' )
+$path can be ignored if you set $tag_js as remote a file with full URL, or a local file with absolute path.
 ```php
 $this->layout->add_js_file('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
@@ -158,7 +159,7 @@ Output
 
 ####add_js_files
 add_js_files ( array $tag_js , string $path, string $position )
-
+$path can be ignored if you set $tag_js as remote files with full URL, or local files with absolute path.
 ```php
 $this->layout->add_js_files(array('bootstrap.min.js','script'), base_url().'assets/js/');
 ```
