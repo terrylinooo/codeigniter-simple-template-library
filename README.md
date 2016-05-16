@@ -16,6 +16,8 @@ Put **CI_footer()** before **&lt;/body&gt;** tag in view.
 
 Put **CI_title()** inside **&lt;title&gt;** and **&lt;/title&gt;** tag in view.
 
+Put **CI_body_attr()** into **&lt;body&gt;** to control attrbutes such as "id", "class" and more.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +25,7 @@ Put **CI_title()** inside **&lt;title&gt;** and **&lt;/title&gt;** tag in view.
     <title><?= CI_title() ?></title>
     <?= CI_head() ?>
 </head>
+<body<?= CI_body_attr() ?>> 
 ```
 
 Put **CI_footer()** before **&lt;/body&gt;** tag in view.
@@ -32,12 +35,7 @@ Put **CI_footer()** before **&lt;/body&gt;** tag in view.
 </html>
 ```
 
-Put **CI_body_attr()** into **&lt;body&gt;** to control attrbutes such as "id", "class" and more.
-```html
-<body<?= CI_body_attr() ?>> 
-```
-All HTML output are handled by CI_head() , CI_footer(), CI_body_attr() and CI_title
-
+All HTML output are handled by CI_head() , CI_footer(), CI_body_attr() and CI_title()
 
 
 ### API Examples
