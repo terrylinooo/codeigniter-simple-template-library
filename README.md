@@ -28,7 +28,6 @@ Put **CI_body_attr()** into **&lt;body&gt;** to control attrbutes such as "id", 
 <body<?= CI_body_attr() ?>> 
 ```
 
-Put **CI_footer()** before **&lt;/body&gt;** tag in view.
 ```html
 <?= CI_footer() ?>
 </body>
