@@ -47,12 +47,18 @@ Use the following APIs in controller.
 
 
 ####add_meta
-add_meta (string $name, string $value, string $type = 'meta')
 
+Parameters
 ```php
 /*
- * @param string $type - 'meta' or 'link', default: meta
+ * add_meta (string $name, string $value, string $type = 'meta')
+ * @param string $name
+ * @param string $value
+ * @param string $type - 'meta' or 'link'. Default: 'meta'
  */
+```
+Example
+```php
 	$this->layout->add_meta('author', 'Terry Lin');
 ```
 Output
@@ -61,8 +67,16 @@ Output
 ```
 
 ####add_custom_meta
-add_custom_meta(string $type, array $attributes)
 
+Parameters
+```php
+/*
+ * add_custom_meta(string $type, array $attributes)
+ * @param string $type 
+ * @param string array $attributes
+ */
+```
+Example
 ```php
 	$this->layout->add_custom_meta('link', array(
 	    'href' => 'test.php',
@@ -92,8 +106,16 @@ Output
 ```
 
 ####add_css_file
-add_css_file ( string $tag_css, string $path = '' )
-$path can be ignored if you set $tag_css as a remote file with full URL, or a local file with absolute path.
+
+Parameters
+```php
+/*
+ * add_css_file ( string $tag_css, string $path = '' )
+ * @param string $tag_css
+ * @param string $path - $path can be ignored if you set $tag_css as a remote file with full URL, or a local file with absolute path.
+ */
+```
+Example
 ```php
 $this->layout->add_css_file('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 ```
@@ -103,9 +125,16 @@ Output
 ```
 
 ####add_css_files
-add_css_files ( array $tag_css, string $path = '')
-$path can be ignored if you set $tag_css as remote files with full URL, or local files with absolute path.
 
+Parameters
+```php
+/*
+ * add_css_files ( array $tag_css, string $path = '')
+ * @param array $tag_css
+ * @param string $path - $path can be ignored if you set $tag_css as remote files with full URL, or local files with absolute path.
+ */
+```
+Example
 ```php
 $this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url().'assets/css/');
 ```
@@ -116,12 +145,16 @@ Output
 ```
 
 ####add_css_rawtext
-add_css_rawtext ( string $content )
+
+Parameter
 ```php
 /*
+ * add_css_rawtext ( string $content )
  * @param string $content
  */
- 
+```
+Example
+```php
 $css_text = <<<EOF
 
 .text {
@@ -131,7 +164,6 @@ $css_text = <<<EOF
 EOF;
 
 $this->layout->add_css_rawtext($css_text);
-
 ```
 Output
 ```html
@@ -147,8 +179,17 @@ Output
 ```
 
 ####add_js_file
-add_js_file ( string $tag_js , string $path = '', string $position = 'header' )
-$path can be ignored if you set $tag_js as remote a file with full URL, or a local file with absolute path.
+
+Parameters
+```php
+/*
+ * add_js_file ( string $tag_js , string $path = '', string $position = 'header' )
+ * @param string $tag_js 
+ * @param string $path - $path can be ignored if you set $tag_js as a remote file with full URL, or a local file with absolute path.
+ * @param string $position - 'header' or 'footer'
+ */
+```
+Example
 ```php
 $this->layout->add_js_file('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
@@ -158,8 +199,17 @@ Output
 ```
 
 ####add_js_files
-add_js_files ( array $tag_js , string $path, string $position )
-$path can be ignored if you set $tag_js as remote files with full URL, or local files with absolute path.
+
+Parameters
+```php
+/*
+ * add_js_files ( array $tag_js , string $path = '', string $position = 'header' )
+ * @param array $tag_js 
+ * @param string $path - $path can be ignored if you set $tag_js as remote files with full URL, or local files with absolute path.
+ * @param string $position - 'header' or 'footer'
+ */
+```
+Example
 ```php
 $this->layout->add_js_files(array('bootstrap.min.js','script'), base_url().'assets/js/');
 ```
@@ -170,22 +220,23 @@ Output
 ```
 
 ####add_js_rawtext
-add_js_rawtext ( string $content , string $position )
 
+Parameters
 ```php
 /*
+ * add_js_rawtext ( string $content , string $position )
  * @param string $content
  * @param string $position - 'header' or 'footer'
  */
- 
+ ```
+Example
+```php
 $js_text = <<<EOF
 alert('this is just a test');
 EOF;
 
 $this->layout->add_js_rawtext($js_text, 'header');
-
 ```
-
 Output
 ```html
 <script>
@@ -196,7 +247,15 @@ alert('this is just a test');
 ```
 
 ####set_title
-set_title ( string $title )
+
+Parameter
+```php
+/*
+ * set_title ( string $title )
+ * @param string $title
+ */
+ ```
+Example
 ```php
 $this->layout->set_title('Test! This is a test title');
 ```
@@ -205,7 +264,15 @@ Output
 <title>Test! This is a test title</title>
 ```
 ####set_body_attr
-set_body_attr ( array $attribute )
+
+Parameter
+```php
+/*
+ * set_body_attr ( array $attribute )
+ * @param array $attribute
+ */
+ ```
+Example
 ```php
 $this->layout->set_body_attr(array('id' => 'home', 'class' => 'global white-bg'));
 ```
