@@ -20,10 +20,8 @@ Put **CI_title()** inside **&lt;title&gt;** and **&lt;/title&gt;** tag in view.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?= CI_title() ?></title>
-	<?= CI_head() ?>
+    <title><?= CI_title() ?></title>
+    <?= CI_head() ?>
 </head>
 ```
 
@@ -59,11 +57,11 @@ Parameters
 ```
 Example
 ```php
-	$this->layout->add_meta('author', 'Terry Lin');
+$this->layout->add_meta('author', 'Terry Lin');
 ```
 Output
 ```html
-	<meta name="author" content="Terry Lin" />
+<meta name="author" content="Terry Lin" />
 ```
 
 ####add_custom_meta
@@ -78,31 +76,31 @@ Parameters
 ```
 Example
 ```php
-	$this->layout->add_custom_meta('link', array(
-	    'href' => 'test.php',
-	    'rel' => 'parent',
-	    'rev' => 'subsection',
-	    'hreflang' => 'en'
-	));
+$this->layout->add_custom_meta('link', array(
+    'href' => 'test.php',
+    'rel' => 'parent',
+    'rev' => 'subsection',
+    'hreflang' => 'en'
+));
 ```
 Output
 ```html
-	<link href="test.php" rel="parent" rev="subsection" hreflang="en">
+<link href="test.php" rel="parent" rev="subsection" hreflang="en">
 ```
 Build special meta tags:
 ```php
-	$this->layout->add_custom_meta('meta', array(
-	    'charset' => 'utf-8'
-	));
-	$this->layout->add_custom_meta('meta', array(
-	    'http-equiv' => 'X-UA-Compatible',
-	    'content' => 'IE=edge'
-	));
+$this->layout->add_custom_meta('meta', array(
+    'charset' => 'utf-8'
+));
+$this->layout->add_custom_meta('meta', array(
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge'
+));
 ```
 Output
 ```html
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 ```
 
 ####add_css_file
@@ -121,7 +119,7 @@ $this->layout->add_css_file('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css
 ```
 Output
 ```html
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 ```
 
 ####add_css_files
@@ -140,8 +138,8 @@ $this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url().
 ```
 Output
 ```html
-    <link href="http://dictpedia.org/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="http://dictpedia.org/assets/css/style.css" rel="stylesheet" />
+<link href="http://dictpedia.org/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="http://dictpedia.org/assets/css/style.css" rel="stylesheet" />
 ```
 
 ####add_css_rawtext
@@ -195,7 +193,7 @@ $this->layout->add_js_file('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/
 ```
 Output
 ```html
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 ```
 
 ####add_js_files
@@ -206,7 +204,7 @@ Parameters
  * add_js_files ( array $tag_js , string $path = '', string $position = 'header' )
  * @param array $tag_js 
  * @param string $path - $path can be ignored if you set $tag_js as remote files with full URL, or local files with absolute path.
- * @param string $position - 'header' or 'footer'
+ * @param string $position - 'header' or 'footer'. Default: 'header'.
  */
 ```
 Example
@@ -215,8 +213,8 @@ $this->layout->add_js_files(array('bootstrap.min.js','script'), base_url().'asse
 ```
 Output
 ```html
-	<script src="http://dictpedia.org/assets/js/bootstrap.min.js"></script>
-	<script src="http://dictpedia.org/assets/js/script.js"></script>
+<script src="http://dictpedia.org/assets/js/bootstrap.min.js"></script>
+<script src="http://dictpedia.org/assets/js/script.js"></script>
 ```
 
 ####add_js_rawtext
@@ -224,9 +222,9 @@ Output
 Parameters
 ```php
 /*
- * add_js_rawtext ( string $content , string $position )
+ * add_js_rawtext ( string $content , string $position = 'header')
  * @param string $content
- * @param string $position - 'header' or 'footer'
+ * @param string $position - 'header' or 'footer'. Default: 'header'.
  */
  ```
 Example
