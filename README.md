@@ -8,7 +8,7 @@ The simplest template libary for Codeigniter ever. The code is easy to understan
 Download library.php to your library folder.
 
 ```php
-$this->load->library(array('layout'));
+$this->load->library('layout');
 ```
 Put **CI_head()** inside **&lt;head&gt;** and **&lt;/head&gt;** tag in view.
 
