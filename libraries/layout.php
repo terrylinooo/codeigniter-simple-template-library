@@ -24,7 +24,8 @@
  * THE SOFTWARE.
  */
 
-class layout {
+class layout
+{
 
     private $tag_meta = '';
     private $tag_css = '';
@@ -83,8 +84,7 @@ class layout {
 
     public static function instance()
     {
-        if ( !self::$instance )
-        {
+        if (!self::$instance) {
             self::$instance = new layout();
         }
         return self::$instance;
@@ -99,8 +99,7 @@ class layout {
 
     public function add_meta($name, $value, $type = 'meta')
     {
-        switch ($type)
-        {
+        switch ($type) {
             case 'meta':
                 self::instance()->tag_meta .= self::instance()->pre_space . '<meta name="' . $name . '" content="' . $value . '" />' . "\n";
                 break;
@@ -121,8 +120,7 @@ class layout {
     {
         $attr_array = array();
 
-        foreach ($attribute AS $key => $value)
-        {
+        foreach ($attribute as $key => $value) {
             $attr_array[] = $key . '="' . $value . '"';
         }
         $attr_string = implode(' ', $attr_array);
@@ -149,10 +147,8 @@ class layout {
 
     public function add_css_files($tag_css = array(), $path = '')
     {
-        if (is_array($tag_css))
-        {
-            foreach ($tag_css AS $value)
-            {
+        if (is_array($tag_css)) {
+            foreach ($tag_css as $value) {
                 self::instance()->tag_css .= self::instance()->pre_space . '<link href="' . $path . $value . '" rel="stylesheet" />' . "\n";
             }
         }
@@ -178,8 +174,7 @@ class layout {
 
     public function add_js_file($tag_js, $path = '', $position = 'header')
     {
-        switch ($position)
-        {
+        switch ($position) {
             case 'header':
                 self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"></script>' . "\n";
                 break;
@@ -199,19 +194,15 @@ class layout {
 
     public function add_js_files($tag_js = array(), $path = '', $position = 'header')
     {
-        if (is_array($tag_js))
-        {
-            switch ($position)
-            {
+        if (is_array($tag_js)) {
+            switch ($position) {
                 case 'header':
-                    foreach ($tag_js AS $value)
-                    {
+                    foreach ($tag_js as $value) {
                         self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"></script>' . "\n";
                     }
                     break;
                 case 'footer':
-                    foreach ($tag_js AS $value)
-                    {
+                    foreach ($tag_js as $value) {
                         self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"></script>' . "\n";
                     }
                     break;
@@ -229,8 +220,7 @@ class layout {
 
     public function add_js_rawtext($content, $position = 'header')
     {
-        switch ($position)
-        {
+        switch ($position) {
             case 'header':
                 self::instance()->rawtext_header_js .= "\n" . $content . "\n";
                 break;
@@ -279,15 +269,13 @@ class layout {
 
         $_header = self::instance()->tag_meta . self::instance()->tag_css . self::instance()->tag_header_js;
 
-        if (!empty(self::instance()->rawtext_header_js))
-        {
+        if (!empty(self::instance()->rawtext_header_js)) {
             $_header .= '<script>' . "\n";
             $_header .= self::instance()->rawtext_header_js . "\n";
             $_header .= '</script>' . "\n";
         }
 
-        if (!empty(self::instance()->rawtext_css))
-        {
+        if (!empty(self::instance()->rawtext_css)) {
             $_header .= '<style>' . "\n";
             $_header .= self::instance()->rawtext_css . "\n";
             $_header .= '</style>' . "\n";
@@ -306,8 +294,7 @@ class layout {
     {
         $_footer = self::instance()->tag_footer_js;
 
-        if (!empty(self::instance()->rawtext_footer_js))
-        {
+        if (!empty(self::instance()->rawtext_footer_js)) {
             $_footer .= '<script>' . "\n";
             $_footer .= self::instance()->rawtext_footer_js . "\n";
             $_footer .= '</script>' . "\n";
@@ -340,8 +327,7 @@ class layout {
     {
         $attr_array = array();
 
-        foreach ($attribute AS $key => $value)
-        {
+        foreach ($attribute as $key => $value) {
             $attr_array[] = $key . '="' . $value . '"';
         }
         $attr_string = implode(' ', $attr_array);
@@ -355,16 +341,11 @@ class layout {
 
     private function meta_default()
     {
-        foreach (self::instance()->meta_default AS $key => $value)
-        {
-            if ($value != '')
-            {
-                if ($key == 'canonical')
-                {
+        foreach (self::instance()->meta_default as $key => $value) {
+            if ($value != '') {
+                if ($key == 'canonical') {
                     self::instance()->tag_meta .= self::instance()->pre_space . '<link rel="' . $key . '" href="' . $value . '" />' . "\n";
-                }
-                else
-                {
+                } else {
                     self::instance()->tag_meta .= self::instance()->pre_space . '<meta name="' . $key . '" content="' . $value . '" />' . "\n";
                 }
             }
@@ -373,12 +354,9 @@ class layout {
 
     private function meta_twitter()
     {
-        foreach (self::instance()->meta_twitter AS $key => $value)
-        {
-            if ($value != '')
-            {
-                if ($key == 'image_src')
-                {
+        foreach (self::instance()->meta_twitter as $key => $value) {
+            if ($value != '') {
+                if ($key == 'image_src') {
                     $key = 'image:src';
                 }
 
@@ -389,16 +367,11 @@ class layout {
 
     private function meta_facebook()
     {
-        foreach (self::instance()->meta_facebook AS $key => $value)
-        {
-            if ($value != '')
-            {
-                if ($key == 'admins' OR $key == 'app_id')
-                {
+        foreach (self::instance()->meta_facebook as $key => $value) {
+            if ($value != '') {
+                if ($key == 'admins' or $key == 'app_id') {
                     $property = 'fb';
-                }
-                else
-                {
+                } else {
                     $property = 'og';
                 }
 
@@ -424,8 +397,7 @@ function CI_footer()
 
 function CI_body_attr()
 {
-    if (!empty(layout::instance()->get_body_attr()))
-    {
+    if (!empty(layout::instance()->get_body_attr())) {
         return ' ' . layout::instance()->get_body_attr();
     }
 }
