@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 
-class layout
+class Layout
 {
 
     private $tag_meta = '';
