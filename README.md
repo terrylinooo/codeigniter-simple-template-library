@@ -3,6 +3,10 @@
 
 The simplest template libary for Codeigniter ever. The code is easy to understand and modify it for your needs.
 
+#####Check out Wiki for detailed examples#####
+
+--------------------------
+
 ### Installation
 
 Download library.php to your library folder.
