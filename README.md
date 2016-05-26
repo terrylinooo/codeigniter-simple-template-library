@@ -9,7 +9,7 @@ The simplest template libary for Codeigniter ever. The code is easy to understan
 
 ### Installation
 
-Download library.php to your library folder.
+Download `Layout.php` to your `application/libraries/` folder.
 
 ```php
 $this->load->library('Layout');
