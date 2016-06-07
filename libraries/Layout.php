@@ -27,25 +27,26 @@
 class Layout
 {
 
-    private $tag_meta = '';
-    private $tag_css = '';
-    private $tag_header_js  = '';
-    private $tag_footer_js  = '';
+    private $tag_meta          = '';
+    private $tag_css           = '';
+    private $tag_header_js     = '';
+    private $tag_footer_js     = '';
     
-    private $rawtext_css = '';
-    private $rawtext_header_js  = '';
-    private $rawtext_footer_js  = '';
+    private $rawtext_css       = '';
+    private $rawtext_header_js = '';
+    private $rawtext_footer_js = '';
 
-    public $pre_space = "    ";
-    public $title = '';
-    public $body_attribute = '';
+    public $pre_space          = "    ";
+    public $title              = '';
+    public $body_attribute     = '';
 
     public $meta_default = array(
-        'author' => '',
-        'viewport' => 'width=device-width, initial-scale=1.0',
-        'keywords' => '',
+        'author'      => '',
+        'viewport'    => 'width=device-width, initial-scale=1.0',
+        'keywords'    => '',
         'description' => '',
-        'canonical' => ''
+        'canonical'   => '',
+        'robots'      => ''
     );
 
     public $meta_twitter = array(
@@ -170,16 +171,18 @@ class Layout
      * @param string $tag_js
      * @param string $path
      * @param string $position
+     * @param string $attr - default: null [ async, defer ]
      */
 
-    public function add_js_file($tag_js, $path = '', $position = 'header')
+    public function add_js_file($tag_js, $path = '', $position = 'header', $attr = '')
     {
+        $attr = ' ' . $attr;
         switch ($position) {
             case 'header':
-                self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"></script>' . "\n";
+                self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"' . $attr . '></script>' . "\n";
                 break;
             case 'footer':
-                self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"></script>' . "\n";
+                self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"' . $attr . '></script>' . "\n";
                 break;
         }
     }
@@ -190,20 +193,22 @@ class Layout
      * @param string $tag_js
      * @param string $path
      * @param string $position
+     * @param string $attr - default: null [ async, defer ]
      */
 
-    public function add_js_files($tag_js = array(), $path = '', $position = 'header')
+    public function add_js_files($tag_js = array(), $path = '', $position = 'header', $attr = '')
     {
+        $attr = ' ' . $attr;
         if (is_array($tag_js)) {
             switch ($position) {
                 case 'header':
                     foreach ($tag_js as $value) {
-                        self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"></script>' . "\n";
+                        self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"' . $attr . '></script>' . "\n";
                     }
                     break;
                 case 'footer':
                     foreach ($tag_js as $value) {
-                        self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"></script>' . "\n";
+                        self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"' . $attr . '></script>' . "\n";
                     }
                     break;
             }
@@ -379,6 +384,7 @@ class Layout
             }
         }
     }
+
 }
 function CI_title()
 {
