@@ -3,7 +3,7 @@
 
 The simplest template libary for Codeigniter ever. The code is easy to understand and modify it for your needs.
 
-#####Check out Wiki for detailed examples#####
+#####[Check out Wiki for detailed examples](https://github.com/terrylinooo/Codeigniter-Simple-Template-Library/wiki)#####
 
 --------------------------
 
