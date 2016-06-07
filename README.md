@@ -182,10 +182,11 @@ Output
 Parameters
 ```php
 /*
- * add_js_file ( string $tag_js , string $path = '', string $position = 'header' )
+ * add_js_file ( string $tag_js , string $path = '', string $position = 'header', $attr = '' )
  * @param string $tag_js 
  * @param string $path - $path can be ignored if you set $tag_js as a remote file with full URL, or a local file with absolute path.
  * @param string $position - 'header' or 'footer'
+ * @param string $attr - default: null [ async, defer ]
  */
 ```
 Example
@@ -202,10 +203,11 @@ Output
 Parameters
 ```php
 /*
- * add_js_files ( array $tag_js , string $path = '', string $position = 'header' )
+ * add_js_files ( array $tag_js , string $path = '', string $position = 'header', $attr = '' )
  * @param array $tag_js 
  * @param string $path - $path can be ignored if you set $tag_js as remote files with full URL, or local files with absolute path.
  * @param string $position - 'header' or 'footer'. Default: 'header'.
+ * @param string $attr - default: null [ async, defer ]
  */
 ```
 Example
@@ -217,7 +219,11 @@ Output
 <script src="http://dictpedia.org/assets/js/bootstrap.min.js"></script>
 <script src="http://dictpedia.org/assets/js/script.js"></script>
 ```
-
+```
+Without async or defer, browser will run your script immediately, before rendering the elements that's below your script tag.
+With async (asynchronous), browser will continue to load the HTML page and render it while the browser load and execute the script at the same time.
+With defer, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.)
+```
 ####add_js_rawtext
 
 Parameters
