@@ -212,12 +212,12 @@ Parameters
 ```
 Example
 ```php
-$this->layout->add_js_files(array('bootstrap.min.js','script'), base_url('assets/js/'));
+$this->layout->add_js_files(array('bootstrap.min.js','script'), base_url('assets/js/'), '', 'async');
 ```
 Output
 ```html
-<script src="http://dictpedia.org/assets/js/bootstrap.min.js"></script>
-<script src="http://dictpedia.org/assets/js/script.js"></script>
+<script src="http://dictpedia.org/assets/js/bootstrap.min.js" async></script>
+<script src="http://dictpedia.org/assets/js/script.js" async></script>
 ```
 ----------------------
 
