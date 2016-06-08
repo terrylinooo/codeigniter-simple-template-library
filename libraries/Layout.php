@@ -137,7 +137,8 @@ class Layout
 
     public function add_css_file($tag_css, $path = '')
     {
-        self::instance()->tag_css .= self::instance()->pre_space . '<link rel="stylesheet" href="' . $path . $tag_css . '" />' . "\n";
+        $path = rtrim($path, '/');
+        self::instance()->tag_css .= self::instance()->pre_space . '<link rel="stylesheet" href="' . $path . '/' . $tag_css . '" />' . "\n";
     }
 
     /**
@@ -148,9 +149,10 @@ class Layout
 
     public function add_css_files($tag_css = array(), $path = '')
     {
+        $path = rtrim($path, '/');
         if (is_array($tag_css)) {
             foreach ($tag_css as $value) {
-                self::instance()->tag_css .= self::instance()->pre_space . '<link href="' . $path . $value . '" rel="stylesheet" />' . "\n";
+                self::instance()->tag_css .= self::instance()->pre_space . '<link href="' . $path . '/' . $value . '" rel="stylesheet" />' . "\n";
             }
         }
     }
@@ -177,12 +179,13 @@ class Layout
     public function add_js_file($tag_js, $path = '', $position = 'header', $attr = '')
     {
         $attr = ' ' . $attr;
+        $path = rtrim($path, '/');
         switch ($position) {
             case 'header':
-                self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"' . $attr . '></script>' . "\n";
+                self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . '/' . $tag_js . '"' . $attr . '></script>' . "\n";
                 break;
             case 'footer':
-                self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $tag_js . '"' . $attr . '></script>' . "\n";
+                self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . '/' . $tag_js . '"' . $attr . '></script>' . "\n";
                 break;
         }
     }
@@ -199,16 +202,17 @@ class Layout
     public function add_js_files($tag_js = array(), $path = '', $position = 'header', $attr = '')
     {
         $attr = ' ' . $attr;
+        $path = rtrim($path, '/');
         if (is_array($tag_js)) {
             switch ($position) {
                 case 'header':
                     foreach ($tag_js as $value) {
-                        self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"' . $attr . '></script>' . "\n";
+                        self::instance()->tag_header_js .= self::instance()->pre_space . '<script src="' . $path . '/' . $value . '"' . $attr . '></script>' . "\n";
                     }
                     break;
                 case 'footer':
                     foreach ($tag_js as $value) {
-                        self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . $value . '"' . $attr . '></script>' . "\n";
+                        self::instance()->tag_footer_js .= self::instance()->pre_space . '<script src="' . $path . '/' . $value . '"' . $attr . '></script>' . "\n";
                     }
                     break;
             }
