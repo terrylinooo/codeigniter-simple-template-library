@@ -316,12 +316,13 @@ $this->layout->get_footer();
 ### Built-in Meta Tags
 
 #### $meta_default
-author, viewport, keywords, description, canonical
+author, viewport, keywords, description, canonical, robots
 
 ```php
 // examples
 $this->layout->meta_default['author'] = 'Terry Lin';
 $this->layout->meta_default['description'] = 'This is just a test file';
+$this->layout->meta_default['robots'] = 'noindex, nofollow';
 ```
 
 #### $meta_twitter
