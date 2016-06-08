@@ -135,7 +135,7 @@ Parameters
 ```
 Example
 ```php
-$this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url().'assets/css/');
+$this->layout->add_css_files(array('bootstrap.min.css','style.css'), base_url('assets/css/'));
 ```
 Output
 ```html
@@ -212,7 +212,7 @@ Parameters
 ```
 Example
 ```php
-$this->layout->add_js_files(array('bootstrap.min.js','script'), base_url().'assets/js/');
+$this->layout->add_js_files(array('bootstrap.min.js','script'), base_url('assets/js/'));
 ```
 Output
 ```html
