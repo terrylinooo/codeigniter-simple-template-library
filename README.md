@@ -320,9 +320,9 @@ author, viewport, keywords, description, canonical, robots
 
 ```php
 // examples
-$this->layout->meta_default['author'] = 'Terry Lin';
-$this->layout->meta_default['description'] = 'This is just a test file';
-$this->layout->meta_default['robots'] = 'noindex, nofollow';
+$this->layout->set_meta('author', 'Terry Lin');
+$this->layout->set_meta('description', 'This is just a test file');
+$this->layout->set_meta('robots', 'noindex, nofollow');
 ```
 
 #### $meta_twitter
@@ -330,8 +330,8 @@ url, site, creator, card, title, description, image_src
 
 ```php
 // examples
-$this->layout->meta_twitter['card'] = 'summary_large_image';
-$this->layout->meta_twitter['image_src'] = 'http://test.test/test.gif';
+$this->layout->set_meta('card', 'summary_large_image', 'twitter');
+$this->layout->set_meta('image_src', 'http://test.test/test.gif', 'twitter');
 ```
 
 #### $meta_facebook
@@ -339,7 +339,7 @@ site_name, url, title, type, description, image, admins, app_id
 
 ```php
 // examples
-$this->layout->meta_facebook['site_name'] = 'Demo Site';
-$this->layout->meta_facebook['description'] = 'This is just a test file';
-$this->layout->meta_facebook['app_id'] = '1123123152';
+$this->layout->set_meta('site_name', 'Demo Site', 'facebook');
+$this->layout->set_meta('description', 'This is just a test file', 'facebook');
+$this->layout-set_meta('app_id', '1123123152', 'facebook');
 ```
