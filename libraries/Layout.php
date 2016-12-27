@@ -259,7 +259,7 @@ class Layout
     }
     
     /**
-     * Set values to the bulti-in meta tags
+     * Set values to the Built-in meta tags
      *
      * @param string $key
      * @param string $value
