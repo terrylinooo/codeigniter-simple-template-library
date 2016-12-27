@@ -257,7 +257,23 @@ class Layout
     {
         return self::instance()->title;
     }
+    
+    /**
+     * Set values to the bulti-in meta tags
+     *
+     * @param string $key
+     * @param string $value
+     * @param string $type
+     */
 
+    public function set_meta($key, $value, $type = 'default')
+    {
+        if ($type != 'default' and $type != 'facebook' and $type != 'twitter') {
+            return false;
+        }
+        $key_name = "meta_{$type}";
+        self::instance()->{$key_name}[$key] = $value;
+    }
     /**
      * Set title
      *
