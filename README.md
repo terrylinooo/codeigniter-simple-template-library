@@ -315,6 +315,8 @@ $this->layout->get_footer();
 
 ### Built-in Meta Tags
 
+It is suggested to use set_meta() to set built-in meta tags, make sure every varibles are saved in same instant. (fixed for CI 3.1).
+
 #### $meta_default
 author, viewport, keywords, description, canonical, robots
 
@@ -341,5 +343,5 @@ site_name, url, title, type, description, image, admins, app_id
 // examples
 $this->layout->set_meta('site_name', 'Demo Site', 'facebook');
 $this->layout->set_meta('description', 'This is just a test file', 'facebook');
-$this->layout-set_meta('app_id', '1123123152', 'facebook');
+$this->layout->set_meta('app_id', '1123123152', 'facebook');
 ```
