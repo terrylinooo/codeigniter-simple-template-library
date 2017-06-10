@@ -3,7 +3,7 @@
 
 The simplest template libary for Codeigniter ever. The code is easy to understand and modify it for your needs.
 
-#####[Check out Wiki for detailed examples](https://github.com/terrylinooo/Codeigniter-Simple-Template-Library/wiki)#####
+##### [Check out Wiki for detailed examples](https://github.com/terrylinooo/Codeigniter-Simple-Template-Library/wiki)
 
 --------------------------
 
@@ -45,7 +45,7 @@ All HTML output are handled by CI_head() , CI_footer(), CI_body_attr() and CI_ti
 Use the following APIs in controller.
 
 
-####add_meta
+#### add_meta
 
 Parameters
 ```php
@@ -65,7 +65,7 @@ Output
 <meta name="author" content="Terry Lin" />
 ```
 
-####add_custom_meta
+#### add_custom_meta
 
 Parameters
 ```php
@@ -104,7 +104,7 @@ Output
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ```
 
-####add_css_file
+#### add_css_file
 
 Parameters
 ```php
@@ -123,7 +123,7 @@ Output
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 ```
 
-####add_css_files
+#### add_css_files
 
 Parameters
 ```php
@@ -143,7 +143,7 @@ Output
 <link href="http://dictpedia.org/assets/css/style.css" rel="stylesheet" />
 ```
 
-####add_css_rawtext
+#### add_css_rawtext
 
 Parameter
 ```php
@@ -177,7 +177,7 @@ Output
 </style>
 ```
 
-####add_js_file
+#### add_js_file
 
 Parameters
 ```php
@@ -198,7 +198,7 @@ Output
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 ```
 
-####add_js_files
+#### add_js_files
 
 Parameters
 ```php
@@ -226,7 +226,7 @@ Output
 * With defer, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.)
 
 --------------------------
-####add_js_rawtext
+#### add_js_rawtext
 
 Parameters
 ```php
@@ -253,7 +253,7 @@ alert('this is just a test');
 </script>
 ```
 
-####set_title
+#### set_title
 
 Parameter
 ```php
@@ -270,7 +270,7 @@ Output
 ```html
 <title>Test! This is a test title</title>
 ```
-####set_body_attr
+#### set_body_attr
 
 Parameter
 ```php
@@ -288,25 +288,25 @@ Output
 <body id="home" class="global white-bg">
 ```
 
-####get_title
+#### get_title
 alias => CI_title()
 ```php
 $this->layout->get_title();
 ```
 
-####get_body_attr
+#### get_body_attr
 alias => CI_body_attr()
 ```php
 $this->layout->get_body_attr();
 ```
 
-####get_header
+#### get_header
 alias => CI_head()
 ```php
 $this->layout->get_header();
 ```
 
-####get_footer
+#### get_footer
 alias => CI_footer()
 ```php
 $this->layout->get_footer();
